@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Gibransyah | About</title>
-</head>
-<body>
-    <h1> Halaman About </h1>
-    <h3> <?php echo $nama; ?> </h3>
-    <p> <?php echo $email; ?> </p>
-    <img src="image/gibransyah ak.jpeg" alt="gibransyah" width="200px">
+@extends('layouts.main')
 
-</body>
-</html>
+@section('container')
+    <h1> Halaman About </h1>
+    <h3> {{ $nama }} </h3>
+    <p> {{ $email }} </p>
+    <img src="image/{{ $gambar }}" alt="{{ $nama }}" width="200px">
+@endsection
