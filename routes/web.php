@@ -28,20 +28,6 @@ use App\Http\Controllers\ContactController;
 // });
 
 
-
-
-Route::get('/about', function () {
-    return  view ('About', [
-        "nama" => "Gibransyah Agung Kusuma",
-        "email" => "3103120097@student.smktelkom-pwt.sch.id",
-        "gambar" => "gibransyah ak.jpeg"
-    ]);
-});
-
-Route::get('/gallery', function () {
-    return  view ('Gallery');
-});
-
 Route::get('/', function () {
     return view('home', [
         "title" => "Home"
