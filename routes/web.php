@@ -29,8 +29,8 @@ use App\Http\Controllers\ContactController;
 
 
 Route::get('/', function () {
-    return view('home', [
-        "title" => "Home"
+    return view('index', [
+        "title" => "Beranda"
     ]);
 });
 
@@ -39,7 +39,7 @@ Route::get('/about', function () {
         "title" => "About",
         "nama" => "Gibransyah Agung Kusuma",
         "email" => "gibransyahagung25@gmail.com",
-        "gambar" => "gibransyah ak.jpg"
+        "gambar" => "gibransyah ak.jpeg"
     ]);
 });
 
@@ -50,3 +50,8 @@ Route::get('/gallery', function () {
 });
 
 Route::resource('/contacts', ContactController::class);
+Auth::routes();
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+});
